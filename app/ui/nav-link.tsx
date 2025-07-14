@@ -5,10 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   HomeIcon,
-  UserCircleIcon,
   UserIcon,
-  DocumentIcon,
-  ChartBarIcon,
+  DocumentIcon
 } from '@heroicons/react/24/solid';
 
 const links = [
