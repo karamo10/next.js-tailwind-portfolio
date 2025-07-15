@@ -19,7 +19,7 @@ export default function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="flex gap-4.5">
+    <div className="flex gap-4">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
@@ -31,7 +31,7 @@ export default function NavLinks() {
             })}
           >
             <LinkIcon
-              className={clsx('w-3 text-black', {
+              className={clsx('w-4 text-black', {
                 'text-blue-600': pathname === link.href,
               })}
             />

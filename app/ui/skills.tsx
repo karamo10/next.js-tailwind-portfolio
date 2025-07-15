@@ -1,6 +1,13 @@
+'use server';
+import { fetchSkill } from '@/libs/data';
 import { skills } from '@/libs/placeholder-data';
 
+
 export default async function Skills() {
+
+  const skill = await fetchSkill();
+  console.log(skill);
+
   return (
     <section>
       <div className="w-[70%] m-auto text-center px-2">

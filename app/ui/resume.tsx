@@ -8,7 +8,7 @@ import {
 
 export default function Resume() {
   return (
-    <section>
+    <section className='py-20'>
       <div className="flex items-center w-[70%] m-auto py-18">
         <div className="flex-1">
           <h1 className="text-3xl font-extrabold mb-3.5">My Resume</h1>

@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Projects() {
+
+
   return (
-    <section>
-      <div className="w-[70%] m-auto py-18">
+    <section className='py-24'>
+      <div className="w-[70%] m-auto">
         <div className="flex flex-col items-center gap-3">
           <h1 className="text-3xl font-extrabold">My Projects</h1>
           <p className="w-[45%] text-gray-400 text-center">
@@ -33,10 +35,10 @@ export default async function Projects() {
                   {project.description}
                 </p>
                 <Link
-                  href={project.button.url}
+                  href={project.button_url}
                   className="bg-black text-xs font-bold text-white px-3 py-1.5 rounded cursor-pointer hover:shadow-lg"
                 >
-                  {project.button.label}
+                  {project.button_label}
                 </Link>
               </div>
             </div>

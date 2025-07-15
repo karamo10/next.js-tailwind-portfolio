@@ -9,10 +9,8 @@ export type Project = {
     title: string;
     description: string;
     image_url: string;
-    button?: {
-        label: string;
-        url: string;
-    }
+    button_label: string;
+    button_url: string;
 };
 
 export type Skill = {

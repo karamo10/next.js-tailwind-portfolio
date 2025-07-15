@@ -3,7 +3,7 @@ import { inter } from './fonts';
 
 export default function Contact() {
   return (
-    <section className={`${inter.className} antialiased`}>
+    <section className={`${inter.className} antialiased py-20`}>
       <div className="w-[70%] m-auto ">
         <h1 className="text-3xl font-extrabold text-center mb-4">Contact Us</h1>
         <p className="w-[50%] m-auto text-center text-gray-400">

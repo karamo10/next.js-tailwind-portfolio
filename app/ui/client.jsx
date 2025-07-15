@@ -1,7 +1,9 @@
 import { clients } from '@/libs/placeholder-data';
 import Image from 'next/image';
+// import { fetchClient } from '../libs/data';
 
-export default function Client() {
+export  default async function Client() {
+  // const clients = await fetchClient();
   return (
     <section>
       <div className="flex items-center justify-around w-[90%] m-auto">
