@@ -6,19 +6,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:seed": "tsx seed/seed.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
+    "@types/multer": "^2.0.0",
+    "add": "^2.0.6",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.0",
+    "formidable": "^3.5.4",
+    "multer": "^2.0.2",
     "next": "15.3.5",
+    "next-auth": "5.0.0-beta.29",
+    "pnpm": "^10.14.0",
     "postgres": "^3.4.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "use-debounce": "^10.0.5",
+    "zod": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/bcrypt": "^5.0.2",
+    "@types/formidable": "^3.4.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

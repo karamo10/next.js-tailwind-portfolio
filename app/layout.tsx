@@ -1,6 +1,6 @@
-import '@/app/ui/globals.css'
-import NavBar from "./ui/navbar";
-import { roboto } from "./ui/fonts";
+import '@/app/ui/globals.css';
+import NavBar from './ui/navbar';
+import Footer from './ui/footer';
 
 export default function RootLayout({
   children,
@@ -9,10 +9,11 @@ export default function RootLayout({
 }) {
   return (
     <html>
-          <body className={`${roboto.className} antialiased text-gray-700`}>
-              <NavBar />
-              {children}
-          </body>
+      <body className={`text-gray-00 min-h-screen flex flex-col`}>
+        <NavBar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

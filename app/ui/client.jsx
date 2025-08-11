@@ -1,13 +1,15 @@
-import { clients } from '@/libs/placeholder-data';
+// import { clients } from '@/libs/placeholder-data';\
+import { fetchClient } from '@/libs/data';
 import Image from 'next/image';
-// import { fetchClient } from '../libs/data';
 
 export  default async function Client() {
-  // const clients = await fetchClient();
+  const clients = await fetchClient();
+  const firstSixClient = clients.slice(0, 6);
+  
   return (
     <section>
-      <div className="flex items-center justify-around w-[90%] m-auto">
-        {clients.map((client) => (
+      <div className="flex justify-center flex-wrap gap-3 sm:flex-wrap md:flex-wrap items-center ">
+        {firstSixClient.map((client) => (
           <div key={client.id}>
             <Image
               src={client.image_url}

@@ -5,20 +5,20 @@ import { useState } from 'react';
 
 export default function Feedbacks() {
   const avatarImages = avatars;
-  const [activeAvatar, setActiveAvatar] = useState(avatarImages[0]);
+  const [activeAvatar, setActiveAvatar] = useState(avatarImages[2]);
 
   return (
-    <section>
-      <div className="bg-white w-[70%] m-auto py-16">
+    <section className="p-4 lg:p-8">
+      <div className=" w-[100%] m-auto py-16 lg:w-[75%]">
         <h1 className="text-3xl font-extrabold text-center mb-4">
           What Clients Say
         </h1>
-        <p className="text-sm text-gray-400 w-[45%] text-center m-auto">
+        <p className="text-sm text-gray-400 w-[80%] text-center m-auto lg:w-[45%]">
           Discover what clients have to say about their experiences working with
           me. My clients satisfaction is my greatest achievement!
         </p>
-        <div className="mt-12 flex gap-3 w-[80%] mr-auto ml-auto">
-          <div className=" flex-1/2">
+        <div className="mt-12 grid gap-8 w-full mx-auto lg:grid-cols-2 bg-white">
+          <div className="lg:pl-24">
             <h2 className="text-2xl w-[40%] font-extrabold mb-2">
               Mobile App Development
             </h2>
@@ -45,15 +45,13 @@ export default function Feedbacks() {
               ))}
             </div>
           </div>
-          <div>
-            <Image
+          <Image
               src={activeAvatar.image_url}
               width={275}
               height={100}
               alt={'avatar image'}
-              className="object-cover rounded"
+              className="object-cover rounded-xl"
             />
-          </div>
         </div>
       </div>
     </section>

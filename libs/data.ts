@@ -1,22 +1,9 @@
 import postgres from 'postgres';
-import { Project, Skill } from './definitions';
-import { error } from 'console';
+import { Project, Skill, Client } from './definitions';
 
 const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' });
 
-// export async function fetchClient() {
-//     try {
-
-//         const data = await sql<Client[]>`SELECT * FROM clients`;
-
-//         return data;
-
-//     } catch (error) {
-//         console.error('Database Error:', error)
-//    }
-// }
-
-export async function fetchProject() {
+export async function fetchAllProject(): Promise<Project[]> {
   try {
     const data = await sql<Project[]>`SELECT * FROM projects`;
 
@@ -27,15 +14,44 @@ export async function fetchProject() {
   }
 }
 
-
 export async function fetchSkill() {
-  
-  try {
-    const data = await sql<Skill[]>`SELECT * FROM skills`;
-    
-    return data;
+  return await sql`SELECT * FROM skills`;
+}
 
-  } catch {
-    console.error('Database Error:', error)
+export async function fetchClient(): Promise<Client[]> {
+  try {
+    const data = await sql<Client[]>`SELECT * FROM clients`;
+
+    return data;
+  } catch (error) {
+    console.error('Database Error:', error);
+    return [];
+  }
+}
+
+export async function fetchClientBySlug(slug: string): Promise<Client[]> {
+return await sql<Client[]>`
+   SELECT * FROM clients
+   WHERE clients.slug = ${slug}`;
+  // const result = await sql<Client[]>`
+  // SELECT * FROM clients
+  // WHERE clients.slug = ${slug}
+  // `;
+  // return result[0] || null;
+  
+}
+
+export async function fetchClientsByName(client: string): Promise<Client[]> {
+  try {
+    const searchTerm = `%${client}%`;
+    const result = await sql<Client[]>`
+    SELECT * FROM clients
+    WHERE title ILIKE ${searchTerm}
+    ORDER BY id DESC
+    `;
+    return result;
+  } catch (error) {
+    console.error('Database Error:', error);
+    return [];
   }
 }

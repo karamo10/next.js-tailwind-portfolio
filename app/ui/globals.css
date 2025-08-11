@@ -6,13 +6,6 @@ body {
     font-family: sans-serif;
 }
 
-.hero-input {
-    outline-color: rgb(10, 10, 10);
-    border: 1px solid grey;
-    padding: 0.3rem 0.7rem;
-    border-radius: 6px;
-    width: 60%;
-}
 
 .hero-input::placeholder {
     font-size: 0.8rem;

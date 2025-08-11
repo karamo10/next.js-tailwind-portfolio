@@ -77,26 +77,69 @@ const clients = [
   {
     id: 1,
     image_url: '/clients/logo-coinbase.svg',
+    title: "Coinbase Security & Wallet Interface Revamp",
+    slug: "coinbase",
+    client: "Coinbase",
+    date: "2024-08-10",
+    summary: "We worked with Coinbase to improve user trust and crypto wallet interaction by focusing on secure design patterns and intuitive UI",
+    tags: ["Crypto", "Security", "UI/UX"],
+    content: "In August 2024, Coinbase became one of our premier fintech clients. Our primary objective was to enhance the security and usability of their wallet interface. We implemented two-factor interaction flows, intuitive QR scan transfers, and simplified transaction histories. The redesign led to a 15% increase in wallet usage and a notable drop in user error reports."
+
   },
   {
     id: 2,
     image_url: '/clients/logo-spotify.svg',
+    title: "Spotify UI Enhancement & Dark Mode Rollout",
+    slug: "spotify",
+    client: "Spotify",
+    date: "2024-07-01",
+    summary: "Dark mode, lighter components, and better discoverability were key in our latest Spotify product design engagement.",
+    tags: ["Dashboard", "Logistics", "Enterprise"],
+    content: "Amazon approached us in June 2024 to streamline their internal logistics dashboard. With millions of SKUs and delivery routes, we prioritized performance and clarity. Our team built a reusable component system in React and integrated real-time metrics with socket updates."
   },
   {
     id: 3,
     image_url: '/clients/logo-pinterest.svg',
+    title: "Pinterest Creator Tools Launch",
+    slug: "pinterest",
+    client: "Pinterest",
+    date: "2024-05-19",
+    summary: "From ideation to implementation, we supported Pinterest in launching a new suite of tools for content creators.",
+    tags: ["Creator Tools", "Web Dev", "Design System"],
+    content: "In May 2024, we collaborated with Pinterest on a major product launch. The new Creator Tools feature allowed users to schedule, brand, and analyze pins. Our focus was performance, modular design, and a seamless onboarding experience."
   },
   {
     id: 4,
     image_url: '/clients/logo-google.svg',
+    title: "Google Becomes a Trusted Client",
+    slug: "google",
+    client: "Google",
+    date: "2024-03-14",
+    summary: "We partnered with Google to enhance their UI design system and accessibility features across several internal tools.",
+    tags: ["UI/UX", "Accessibility", "Tech Giant"],
+    content: "In March 2024, Google joined our client portfolio. Our team collaborated on refining Google's internal UI system, ensuring ADA compliance and implementing new Figma design tokens across departments. This project marked a turning point in our growth as an inclusive design-focused agency."
   },
   {
     id: 5,
     image_url: '/clients/logo-amazon.svg',
+    title: "Amazon's Logistics Dashboard Revamp",
+    slug: "amazon",
+    client: "Amazon",
+    date: "2024-06-02",
+    summary: "We redesigned Amazon's internal logistics dashboard for better usability, data visualization, and mobile responsiveness.",
+    tags: ["Dashboard", "Logistics", "Enterprise"],
+    content: "Amazon approached us in June 2024 to streamline their internal logistics dashboard. With millions of SKUs and delivery routes, we prioritized performance and clarity. Our team built a reusable component system in React and integrated real-time metrics with socket updates."
   },
   {
     id: 6,
     image_url: '/clients/logo-netflix.svg',
+    title: "Netflix Original Campaign Microsites",
+    slug: "netflix",
+    client: "Netflix",
+    date: "2024-04-23",
+    summary: "We developed immersive microsites for several Netflix Originals, enhancing user engagement and retention.",
+    tags: ["Campaign", "Microsite", "Streaming"],
+    content: "Netflix brought us on board to create microsites for their new Original series. Each site featured animated intros, embedded trailers, and interactive cast bios. The microsites drove a 20% increase in viewer conversion from web to app."
   },
 ];
 
@@ -160,4 +203,12 @@ const avatars = [
   },
 ];
 
-export { projects, clients, skills, avatars };
+const users = [
+  {
+    id: '410544b2-4001-4271-9855-fec4b6a6442a',
+    name: 'user',
+    email: 'user@gmail.com',
+    password: '123456'
+  }
+]
+export { projects, clients, skills, avatars, users };

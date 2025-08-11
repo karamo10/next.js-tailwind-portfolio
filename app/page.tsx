@@ -1,12 +1,11 @@
 import Hero from './ui/hero';
 import Clients from './ui/clients';
 import Skills from './ui/skills';
-import Projects from './ui/projects';
+import Projects from './ui/preview-projects';
 import Resume from './ui/resume';
 import Feedbacks from './ui/feedbacks';
 import TrustedClients from './ui/trusted-clients';
 import Contact from './ui/contact';
-import Footer from './ui/footer';
 
 export default function HomePage() {
   return (
@@ -19,7 +18,6 @@ export default function HomePage() {
       <Feedbacks />
       <TrustedClients />
       <Contact />
-      <Footer />
     </main>
   );
 }
