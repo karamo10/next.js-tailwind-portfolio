@@ -28,18 +28,6 @@ export default function EditBlogPost({ post }: { post: Client }) {
                     <p key={index} className="text-red-500">{error}</p>
                 ))}
             </div>
-            {/* <div>
-                <label
-                    htmlFor="date"
-                    className="block text-x1 text-gray-600 capitalize"
-                >Date</label>
-                <input
-                    type="date"
-                    name="date"
-                    className="mt-2 w-full p-2 border-gray-600 rounded-md shadow-sm"
-                    defaultValue={post.date} />
-            </div> */}
-           
             <div>
                 <label
                     htmlFor="summary"
