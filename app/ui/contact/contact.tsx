@@ -1,6 +1,6 @@
 import ContactForm from './contact-form';
 import { PhoneIcon, InboxIcon, TicketIcon } from '@heroicons/react/24/solid';
-import { inter } from './fonts';
+import { inter } from '../fonts/fonts';
 
 export default function Contact() {
 

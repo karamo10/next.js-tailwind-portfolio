@@ -1,4 +1,4 @@
-import EditBlogPost from "@/app/ui/edit-blog-post";
+import EditBlogPost from "@/app/ui/blog/edit-blog-post";
 import { fetchClientBySlug } from "@/libs/data";
 
 

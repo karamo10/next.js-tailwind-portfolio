@@ -1,4 +1,7 @@
-import Client from './client';
+import { Suspense } from 'react';
+import Client from '../client/client';
+import { ClientSkeleton } from '../skeleton/skeletons';
+
 
 export default function TrustedClients() {
   return (
@@ -10,7 +13,9 @@ export default function TrustedClients() {
         <h2 className="text-3xl w-[40%] font-bold text-center mx-auto mb-12">
           Trusted by over 10,000+ clients
         </h2>
-        <Client />
+        <Suspense fallback={<ClientSkeleton />}>
+          <Client />
+        </Suspense>
       </div>
     </section>
   );

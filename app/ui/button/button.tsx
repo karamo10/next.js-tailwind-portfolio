@@ -1,6 +1,6 @@
 import { deletePost } from "@/libs/action";
 import { Client } from "@/libs/definitions";
-import { TrashIcon, PencilIcon } from "@heroicons/react/20/solid";
+import { TrashIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
 
@@ -21,7 +21,7 @@ export function DeletePost({ id }: { id: number }) {
 export function EditPost({post}: {post: Client}) {
     return (
         <Link href={`/blogs/${post.slug}/edit`}
-            className="text-xs text-white font-medium bg-black/50 hover:bg-black/90 px-1 rounded-sm"
+            className="text-xs text-white font-medium bg-black/50 hover:bg-black/90 px-1 rounded-sm transition-all"
         >
             Edit post
         </Link>

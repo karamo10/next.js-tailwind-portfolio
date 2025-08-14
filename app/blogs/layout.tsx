@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import SignOut from '../ui/signout';
+import SignOut from '../ui/blog/signout';
+
 
 export default function BlogLayout({
   children,

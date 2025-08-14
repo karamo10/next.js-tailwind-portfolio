@@ -210,5 +210,34 @@ const users = [
     email: 'user@gmail.com',
     password: '123456'
   }
+];
+
+const latestPost = [
+  {
+    "img": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    "title": "AI Revolutionizing Healthcare Diagnostics",
+    "date": "2025-08-14"
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1581093588401-22e8c6e2b340",
+    "title": "The Rise of Quantum Computing in 2025",
+    "date": "2025-08-14"
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+    "title": "How 5G is Transforming Smart Cities",
+    "date": "2025-08-14"
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1504386106331-3e4e71712b38",
+    "title": "Top 10 AI Tools for Content Creators",
+    "date": "2025-08-14"
+  },
+  {
+    "img": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+    "title": "Blockchain Beyond Cryptocurrency: Real-World Applications",
+    "date": "2025-08-14"
+  }
 ]
-export { projects, clients, skills, avatars, users };
+
+export { projects, clients, skills, avatars, users, latestPost };

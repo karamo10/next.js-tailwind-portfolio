@@ -1,4 +1,4 @@
-import Form from "@/app/ui/create-blog-post"
+import Form from "@/app/ui/blog/create-blog-post"
 
 export default function Page() {
 

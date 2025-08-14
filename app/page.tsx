@@ -1,22 +1,32 @@
-import Hero from './ui/hero';
-import Clients from './ui/clients';
-import Skills from './ui/skills';
-import Projects from './ui/preview-projects';
-import Resume from './ui/resume';
-import Feedbacks from './ui/feedbacks';
-import TrustedClients from './ui/trusted-clients';
-import Contact from './ui/contact';
+import Hero from './ui/hero/hero';
+import Clients from './ui/client/clients';
+import Skills from './ui/skill/skills';
+import Projects from './ui/project/preview-projects';
+import Resume from './ui/resume/resume';
+import Feedbacks from './ui/feedback/feedbacks';
+import TrustedClients from './ui/client/trusted-clients';
+import Contact from './ui/contact/contact';
+import { Suspense } from 'react';
+import { ClientSkeleton, SkillSkeleton, ProjectsSkeleton } from './ui/skeleton/skeletons';
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Clients />
-      <Skills />
-      <Projects />
+      <Suspense fallback={<ClientSkeleton />}>
+        <Clients />
+      </Suspense>
+      <Suspense fallback={<SkillSkeleton />}>
+        <Skills />
+      </Suspense>
+      <Suspense fallback={<ProjectsSkeleton />}>
+        <Projects />
+      </Suspense>
       <Resume />
       <Feedbacks />
-      <TrustedClients />
+      <Suspense fallback={<ClientSkeleton/>}>
+        <TrustedClients />
+      </Suspense>
       <Contact />
     </main>
   );

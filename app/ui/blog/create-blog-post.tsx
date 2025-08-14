@@ -119,7 +119,7 @@ export default function Form() {
       </div>
       <div>
         {BlogPostState.errors?.content && BlogPostState.errors.content.map((error: string, index: number) => (
-          <p className="text-xs text-red-500">{error}</p>
+          <p key={index} className="text-xs text-red-500">{error}</p>
         ))}
       </div>
       <div>

@@ -2,7 +2,8 @@
 import { fetchClient } from '@/libs/data';
 import Image from 'next/image';
 
-export  default async function Client() {
+export default async function Client() {
+  // await new Promise((resolve) => setTimeout(resolve, 20000));
   const clients = await fetchClient();
   const firstSixClient = clients.slice(0, 6);
   

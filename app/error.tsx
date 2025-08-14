@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { FaceFrownIcon } from '@heroicons/react/20/solid';
 
 export default function Error({

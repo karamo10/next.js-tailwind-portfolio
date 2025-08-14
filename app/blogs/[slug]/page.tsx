@@ -1,5 +1,6 @@
 import { fetchClientBySlug } from '@/libs/data';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: {
@@ -10,6 +11,10 @@ type Props = {
 export default async function BlogPage({ params }: Props) {
   const clients = await fetchClientBySlug(params.slug);
   const post = clients[0];
+
+  if (!post) {
+    notFound();
+  }
 
     return (
     <div className="py-8">
@@ -28,7 +33,7 @@ export default async function BlogPage({ params }: Props) {
           <p className="text-lg/7 text-gray-800">{post.content}</p>
           <div className="grid gap-3 my-1 lg:grid-cols-3">
             {post.tags.map((tag) => (
-              <button className="text-sm font-extrabold bg-neutral-200 text-gray-500 px-3 py-2 rounded-lg text-nowrap">
+              <button key={tag} className="text-sm font-extrabold bg-neutral-200 text-gray-500 px-3 py-2 rounded-lg text-nowrap">
                 {tag}
               </button>
             ))}

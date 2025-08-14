@@ -1,11 +1,10 @@
 // import { skills } from '@/libs/placeholder-data';
-import { fetchSkill } from '@/libs/data';
-import SkillCard from './skillcard';
-
-
+import { resolve } from 'path';
+import { Suspense } from 'react';
+import { SkillSkeleton } from '../skeleton/skeletons';
+import SkillCardsAsync from './skillcardsasync';
 
 export default async function Skills() {
-  const skills = await fetchSkill();
 
   return (
     <section className="p-4 lg:p-8">
@@ -19,16 +18,9 @@ export default async function Skills() {
             calling. Discover below how I can help you.
           </p>
         </div>
-        <div className=" grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-12 p-1">
-          {skills.map((skill) => (
-            <SkillCard
-              key={skill.id}
-              title={skill.title}
-              description={skill.description}
-              iconKey={skill.icon_image || skill.icon_name}
-            />
-          ))}
-        </div>
+        <Suspense fallback={<SkillSkeleton />}>
+           <SkillCardsAsync />
+        </Suspense>
       </div>
     </section>
   );
