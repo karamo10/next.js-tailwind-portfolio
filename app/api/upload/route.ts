@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import cloudinary from "@/libs/cloudinary";
+import { UploadApiResponse } from "cloudinary";
 
 export async function POST(req: NextRequest) {
     try { 
@@ -13,7 +14,7 @@ export async function POST(req: NextRequest) {
         const arrayBuffer = await file.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const uploadResult = await new Promise<any>((resolve, reject) => {
+        const uploadResult = await new Promise<UploadApiResponse>((resolve, reject) => {
             const stream = cloudinary.uploader.upload_stream(
                 {
                     folder: "test_cloud_upload",
@@ -21,7 +22,8 @@ export async function POST(req: NextRequest) {
                  },
                 (error, result) => {
                     if (error) reject(error);
-                    else resolve(result);
+                    else if (result) resolve(result);
+                    else reject(new Error("Upload result is undefined"));
                 }
             );
             stream.end(buffer);

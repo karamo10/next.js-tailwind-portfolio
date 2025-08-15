@@ -1,5 +1,4 @@
 // import { skills } from '@/libs/placeholder-data';
-import { resolve } from 'path';
 import { Suspense } from 'react';
 import { SkillSkeleton } from '../skeleton/skeletons';
 import SkillCardsAsync from './skillcardsasync';
