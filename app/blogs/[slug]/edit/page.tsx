@@ -1,11 +1,11 @@
 import EditBlogPost from "@/app/ui/blog/edit-blog-post";
 import { fetchClientBySlug } from "@/libs/data";
 
-type Props = {
+interface EditPageProps {
     params: {slug: string}
 }
 
-export default async function EditPage({params}: Props)  {
+export default async function EditPage({params}: EditPageProps)  {
     const posts = await fetchClientBySlug(params.slug);
     const post = posts[0]
 
