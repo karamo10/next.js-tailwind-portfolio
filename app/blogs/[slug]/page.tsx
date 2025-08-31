@@ -2,15 +2,18 @@ import { fetchClientBySlug } from '@/libs/data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { promises } from 'dns';
 
 export const metadata: Metadata = {
   title: "Post"
 }
 
 
-export default async function BlogPage({ params }: {params: Promise<{slug: string}>}) {
+export default async function BlogPage(props : {params: Promise<{slug: string}>}) {
+  
+  const params = await props.params;
 
-  const { slug } = await params;
+  const slug = params.slug;
 
   const clients = await fetchClientBySlug(slug);
   const post = clients[0];
