@@ -2,7 +2,6 @@ import { fetchClientBySlug } from '@/libs/data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { sl } from 'zod/v4/locales/index.cjs';
 
 export const metadata: Metadata = {
   title: "Post"
