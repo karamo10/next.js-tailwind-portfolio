@@ -2,7 +2,6 @@ import { fetchClientBySlug } from '@/libs/data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { promises } from 'dns';
 
 export const metadata: Metadata = {
   title: "Post"
