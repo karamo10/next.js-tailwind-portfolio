@@ -1,8 +1,11 @@
 import PreviewProject from '../ui/project/preview-projects-async';
 import { Suspense } from 'react';
 import { ProjectsSkeleton } from '../ui/skeleton/skeletons';
+import { Metadata } from 'next';
 
-
+export const metadata: Metadata = {
+  title: "Projects"
+}
 
 export default function ProjectsFull() {
 

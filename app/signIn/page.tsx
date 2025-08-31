@@ -9,6 +9,7 @@ import { useActionState } from 'react';
 import { authenticate } from '@/libs/action';
 import { useSearchParams } from 'next/navigation';
 
+
 export default function SignIn() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/blogs';

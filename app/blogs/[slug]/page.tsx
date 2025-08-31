@@ -1,15 +1,19 @@
 import { fetchClientBySlug } from '@/libs/data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import { sl } from 'zod/v4/locales/index.cjs';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+export const metadata: Metadata = {
+  title: "Post"
+}
 
-export default async function BlogPage({ params }: Props) {
-  const clients = await fetchClientBySlug(params.slug);
+
+export default async function BlogPage({ params }: {params: Promise<{slug: string}>}) {
+
+  const { slug } = await params;
+
+  const clients = await fetchClientBySlug(slug);
   const post = clients[0];
 
   if (!post) {

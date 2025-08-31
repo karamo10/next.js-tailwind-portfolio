@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function Post({ searchParams }: Props) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
   const query = searchParams?.q ?? '';
   const clients = query ? await fetchClientBySlug(query) : await fetchClient();
 

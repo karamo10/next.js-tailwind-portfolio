@@ -1,3 +1,8 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Account",
+}
 
 export default async function AccountPage() {
    

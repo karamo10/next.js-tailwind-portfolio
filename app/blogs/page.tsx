@@ -4,6 +4,12 @@ import CreatePostButton from '../ui/blog/btn-create-blog-post';
 import Post from '../ui/blog/blog-post';
 import { Suspense } from 'react';
 import { PostsSkeleton } from '../ui/skeleton/skeletons';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Blog"
+}
+
 
 export default function BlogPages({
   searchParams,
