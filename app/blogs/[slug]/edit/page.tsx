@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 }
 
 
-export default async function EditPage({ params }: { params: { slug: string } }) {
-    console.log('params slug', params.slug);
+export default async function EditPage(props: {params: Promise<{slug: string}>}) {
+    const params = await props.params
     const posts = await fetchClientBySlug(params.slug);
     const post = posts[0]
 

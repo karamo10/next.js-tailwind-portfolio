@@ -11,11 +11,9 @@ export const metadata: Metadata = {
 }
 
 
-export default function BlogPages({
-  searchParams,
-}: {
-  searchParams: { q?: string };
-}) {
+export default async function BlogPages(props: { searchParams: Promise<{ q?: string }>; }) {
+  const searchParams = await props.searchParams
+  
   return (
     <section className="px-3 py-8 flex justify-center gap-4">
       <div className="  lg:w-[65%]">

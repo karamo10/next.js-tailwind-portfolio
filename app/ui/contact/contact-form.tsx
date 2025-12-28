@@ -124,7 +124,7 @@ export default function ContactForm() {
       <div className="flex flex-col-reverse mt-10">
         
         <textarea 
-          className="peer w-full h-[100px]  outline-0 border-b-2 border-gray-400 resize-none focus:border-gray-900"
+          className="peer w-full h-[100px] outline-0 border-b-2 border-gray-400 resize-none focus:border-gray-900"
           name="message"
         ></textarea>
         <label className="block text-x1 text-gray-600 peer-focus:text-gray-900 transition" htmlFor="message">
