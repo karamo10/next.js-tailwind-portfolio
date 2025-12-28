@@ -1,6 +1,6 @@
 import type { NextAuthConfig } from 'next-auth';
-import { signIn } from 'next-auth/react';
-import { usePathname } from 'next/navigation';
+// import { signIn } from 'next-auth/react';
+// import { usePathname } from 'next/navigation';
 
 export const authConfig = {
   pages: {
