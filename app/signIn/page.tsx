@@ -29,7 +29,7 @@ export default function SignIn() {
             </label>
             <div className="relative mt-3">
               <input
-                className="peer block  w-full py-2 px-10 border border-gray-400 focus:border-gray-900 placeholder:text-sm outline-none placeholder:text-gray-600  rounded"
+                className="peer block  w-full py-2 px-10 border border-gray-400 focus:border-gray-900 placeholder:text-sm outline-none placeholder:text-gray-600 rounded"
                 type="email"
                 name="email"
                 id="email"
