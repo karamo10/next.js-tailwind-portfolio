@@ -40,3 +40,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfop
 next-env.d.ts
+
+seed
