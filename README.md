@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+My First Next.js Project
+This project marks my transition to full-stack development using the Next.js App Router. It focuses on server-side logic, secure authentication, and strict type safety.
 
-## Getting Started
+Tech Stack
+Framework: Next.js 15 (App Router)
 
-First, run the development server:
+Database: PostgreSQL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Authentication: NextAuth.js (Credentials Provider)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Validation: Zod
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Styling: Material Tailwind
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Key Features
+Protected Blog: Implemented a blog system where specific routes are restricted to authenticated users via NextAuth.
 
-## Learn More
+Server Actions: Handled all data mutations (CRUD operations) using Server Actions, eliminating the need for manual API route management.
 
-To learn more about Next.js, take a look at the following resources:
+Type-Safe Forms: Integrated Zod schemas to validate user input on the server, ensuring data integrity before it reaches the PostgreSQL database.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Server Components: Leveraged React Server Components to optimize data fetching and reduce client-side JavaScript.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Technical Challenge: Next.js 15 Async Params
+The most significant learning curve involved a specific change in Next.js 15 regarding dynamic routes.
 
-## Deploy on Vercel
+In this version, params and searchParams are now treated as Promises in Server Components. While they still behave like objects at runtime, TypeScript requires them to be awaited to function correctly. This ensures the framework can handle future rendering optimizations.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Incorrect Pattern (Next.js 14 & earlier):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TypeScript
+export default function Page({ params }: { params: { slug: string } }) {
+  const slug = params.slug; 
+  // Throws a type error in Next.js 15
+}
+Correct Pattern (Next.js 15):
+
+TypeScript
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  // Proper asynchronous handling
+}
+Lessons Learned
+As my first Next.js project, this taught me how to manage the "Server-First" mindset. Navigating the shift from treating props as synchronous objects to asynchronous promises was a breakthrough that deepened my understanding of the Next.js execution model
