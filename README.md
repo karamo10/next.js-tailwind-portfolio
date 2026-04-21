@@ -1,19 +1,24 @@
-My First Next.js Project
+## My First Next.js Project
 This project marks my transition to full-stack development using the Next.js App Router. It focuses on server-side logic, secure authentication, and strict type safety.
 
-Tech Stack
-Framework: Next.js 15 (App Router)
+---
 
-Database: PostgreSQL
+### Tech Stack
+* ***Framework:*** Next.js 15 (App Router)
 
-Authentication: NextAuth.js (Credentials Provider)
+* ***Database:*** PostgreSQL
 
-Validation: Zod
+* ***Authentication:*** NextAuth.js (Credentials Provider)
 
-Styling: Material Tailwind
+* ***Validation:*** Zod
 
-Key Features
-Protected Blog: Implemented a blog system where specific routes are restricted to authenticated users via NextAuth.
+***Styling:*** Tailwind 
+
+---
+
+### Key Features
+
+***Protected Blog:*** Implemented a blog system where specific routes are restricted to authenticated users via NextAuth.
 
 Server Actions: Handled all data mutations (CRUD operations) using Server Actions, eliminating the need for manual API route management.
 
