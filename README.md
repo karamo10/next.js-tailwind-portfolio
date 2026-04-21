@@ -37,7 +37,8 @@ In this version, ```params``` and ```searchParams``` are now treated as Promises
 ### Incorrect Pattern (Next.js 14 & earlier):
 
 ```tsx
-TypeScript
+TS
+
 export default function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug; 
   // Throws a type error in Next.js 15
@@ -47,7 +48,8 @@ export default function Page({ params }: { params: { slug: string } }) {
 ### Correct Pattern (Next.js 15):
 
 ```tsx
-TypeScript
+TS
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   // Proper asynchronous handling
